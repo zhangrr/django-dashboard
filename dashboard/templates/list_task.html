@@ -1,0 +1,42 @@
+{% include "header.html" %}
+{% load bootstrap_toolkit %}
+    <div class="span10">
+        <h1>任务列表</h1>
+        <div class="well">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <td><strong>ID</strong></td>
+                    <td><strong>创建者</strong></td>
+                    <td><strong>创建时间</strong></td>
+                    <td><strong>IP地址</strong></td>
+                    <td><strong>NETMASK</strong></td>
+                    <td><strong>GATEWAY</strong></td>
+                    <td><strong>所属物理机</strong></td>
+                    <td><strong>所用虚机模板</strong></td>
+                    <td><strong>任务状态</strong></td>
+                </tr>
+                {% for line in lines %}
+                <tr>
+                    <td><a href="">{{ line.id }}</a></td>
+                    <td><a href="">{{ line.creater.username }}</a></td>
+                    <td><a href="">{{ line.createdtime|date:"Y-m-d H:i:s" }}</a></td>
+                    <td><a href="">{{ line.vmachine.ip }}</a></td>
+                    <td><a href="">{{ line.vmachine.netmask }}</a></td>
+                    <td><a href="">{{ line.vmachine.gateway }}</a></td>
+                    <td><a href="">{{ line.vmachine.pmachine }}</a></td>
+                    <td><a href="">{{ line.vimage }}</a></td>
+                    {% if line.uuid != NULL %}
+                    <td><p data-interval="60000" data-url="/dashboard/t/poll_state?job={{ line.uuid }}" data-replace-inner="#run-state{{ line.id }}"><span id="run-state{{ line.id }}">Wait a minute</span></td>
+                    {% else %}
+                    <td>Job not run</a></td>
+                    {% endif %}
+            </p>
+                </tr>
+                </a>
+                {% endfor %}
+            </table>  
+            {% bootstrap_pagination lines url="?page=1" align="center" size="large" %}
+            <a class="btn btn-primary" href="/dashboard/t/runall"><i class="icon-pencil icon-white"></i>执行</a>
+        </div>
+    </div>
+{% include "footer.html" %}  

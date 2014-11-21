@@ -1,0 +1,25 @@
+{% include "header.html" %}
+{% load bootstrap_toolkit %}  
+{% load url from future %}  
+
+<div class="span10">
+    <h2>增加物理宿主机</h2>  
+      
+    {% if something_is_wrong %}  
+        <div class="alert alert-error">  
+            <button type="button" class="close" data-dismiss="alert">×</button>  
+            <h4>错误!</h4>以下字段为必填 
+        </div>  
+    {% endif %}  
+    <div class="well">  
+        <form class="form-horizontal" action="" method="post">  
+            {% csrf_token %}  
+            {{ form|as_bootstrap:"horizontal" }}  
+            <p class="form-actions">  
+                <input type="submit" value="确认修改" class="btn btn-primary">  
+            </p>  
+        </form>  
+    </div>  
+</div>
+{% include "footer.html" %}  
+  

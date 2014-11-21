@@ -1,0 +1,24 @@
+{% include "header.html" %}
+{% load bootstrap_toolkit %}
+    <div class="span10">
+        <h1>虚机镜像文件列表</h1>
+        <div class="well">
+            <table class="table table-striped table-hover">  
+                <tr>  
+                    <td><strong>ID</strong></td>  
+                    <td><strong>镜像下载地址</strong></td>  
+                    <td><strong>操作选项</strong></td>  
+                </tr>  
+                {% for line in lines %}  
+                    <tr>  
+                        <td><a href="/dashboard/p/view/{{ line.id }}">{{ line.id }}</a></td>
+                        <td><a href="/dashboard/i/view/{{ line.id }}">{{ line.img_url }}</a></td>
+                        <td><a class="btn btn-primary btn-small" href="/dashboard/i/edit/{{ line.id }}"><i class="icon-pencil icon-white"></i> 编辑</a>&nbsp;<a class="btn btn-primary btn-small"href="/dashboard/i/delete/{{ line.id }}"><i class="icon-remove icon-white"></i>删除</a></td>
+                    </tr>  
+                </a>  
+                {% endfor %}  
+            </table>  
+            {% bootstrap_pagination lines url="?page=1" align="center" size="large" %}  
+        </div>
+    </div>
+{% include "footer.html" %}  

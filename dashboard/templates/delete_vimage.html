@@ -1,0 +1,21 @@
+{% include "header.html" %}
+{% load bootstrap_toolkit %}  
+{% load url from future %}  
+
+<div class="span10">
+    <h2>删除虚机镜像地址 </h2>  
+    <div class="alert alert-error">
+            <h4>删除!</h4>　　确认删除以下虚机镜像地址？？？
+     </div>
+    <div class="well">  
+        <form class="form-horizontal" action="" method="post">  
+            {% csrf_token %}  
+            {{ form|as_bootstrap:"horizontal" }} 
+            <p class="form-actions">  
+                <input type="submit" value="确认删除" class="btn btn-primary">  
+            </p>  
+        </form>  
+    </div>  
+</div>
+{% include "footer.html" %}  
+  

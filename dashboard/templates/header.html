@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <title>Admin Home Page</title>
+    <meta charset="utf-8">
+    <!-- Bootstrap -->
+    <title>修改密码</title>  
+    <meta name="description" content="">  
+    <meta name="author" content="张然睿">  
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">  
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.css">  
+    <style type="text/css">  
+        body {  
+            padding-top: 60px;  
+        }  
+    </style>  
+    <!--[if lt IE 9]>  
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>  
+    <![endif]-->  
+    <script src="/static/jquery/1.9.0/jquery.min.js"></script>
+    <script src="/static/jquery/jquery-migrate-1.2.1.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/ajax/eldarion-ajax.min.js"></script>
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">虚机管理系统</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span id="userLoggedIn"></span><i class="caret"></i> 
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a tabindex="-1" href="/accounts/logout">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+            <h3>用户管理</h3>
+            <ul class="toggle">
+                <li><a href="/accounts/changepwd">修改密码</a></li>
+            </ul>
+            <h3>虚机镜像管理</h3>
+            <ul class="toggle">
+                <li><a href="/dashboard/i/list">虚机镜像列表</a></li>
+                <li><a href="/dashboard/i/create">增加虚机镜像</a></li>
+            </ul>
+            <h3>物理机管理</h3>
+            <ul class="toggle">
+                <li><a href="/dashboard/p/list">物理机列表</a></li>
+                <li><a href="/dashboard/p/bcreate">批量增加物理机</a></li>
+                <li><a href="/dashboard/p/create">单独增加物理机</a></li>
+            </ul>
+            <h3>虚拟机管理</h3>
+            <ul class="toggle">
+                <li><a href="/dashboard/v/list">虚拟机列表</a></li>
+                <li><a href="/dashboard/v/bcreate">批量增加虚拟机</a></li>
+                <li><a href="/dashboard/v/create">单独增加虚拟机</a></li>
+            </ul>
+            <h3>虚机任务</h3>
+            <ul class="toggle">
+                <li><a href="/dashboard/t/list">任务列表</a></li>
+            </ul>
+            <h3>监控图表</h3>
+            <ul class="toggle">
+                <li><a href="/dashboard/highcharts">Hue负载列表</a></li>
+            </ul>
+        </div>
